@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- hsl(201 100% 13%) — matches site light-theme background -->
+  <rect width="32" height="32" rx="8" fill="#00212d"/>
+  <!-- Three stacked planes (build + layer metaphor) -->
+  <path
+    fill="#f2f6f8"
+    d="M7 10 L18 10 16.5 14 7 14ZM7 16 L20 16 18.5 20 7 20ZM7 22 L22 22 20.5 26 7 26Z"
+  />
+</svg>
