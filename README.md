@@ -2,6 +2,8 @@
 
 Marketing site for **Buildplane** — a fictional Brooklyn studio portfolio built with React. It ships as a static SPA: product/brand studio narrative, work grid, about, journal, and a contact page with a static form.
 
+**Live site:** [buildplane.wailsolaiman.com](https://buildplane.wailsolaiman.com/)
+
 ## Stack
 
 - [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
