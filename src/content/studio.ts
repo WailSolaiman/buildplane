@@ -1,13 +1,15 @@
 import { site } from './site'
 
 /** Stills in /public/studio */
+const base = import.meta.env.BASE_URL
+
 const studioAssets = {
-  lumenAtlas: '/studio/Manhattan_gallery_lobby_202604011236.jpeg',
-  northwindOs: '/studio/Northwind_OS_desk_202604011238.jpeg',
-  velvetLedger: '/studio/Small_office_reception_202604011243.jpeg',
-  studioNotes: '/studio/Desk_still_life_202604011247.jpeg',
-  harborMeridian: '/studio/Desk_with_monitor_202604011247.jpeg',
-  dumboWorks: '/studio/Loft_coworking_brick_202604011247.jpeg',
+  lumenAtlas: `${base}studio/Manhattan_gallery_lobby_202604011236.jpeg`,
+  northwindOs: `${base}studio/Northwind_OS_desk_202604011238.jpeg`,
+  velvetLedger: `${base}studio/Small_office_reception_202604011243.jpeg`,
+  studioNotes: `${base}studio/Desk_still_life_202604011247.jpeg`,
+  harborMeridian: `${base}studio/Desk_with_monitor_202604011247.jpeg`,
+  dumboWorks: `${base}studio/Loft_coworking_brick_202604011247.jpeg`,
 } as const
 
 export const studioProjects = [

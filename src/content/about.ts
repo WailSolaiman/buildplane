@@ -1,14 +1,16 @@
 import { site } from './site'
 
 /** Assets in /public/about */
+const base = import.meta.env.BASE_URL
+
 export const aboutAssets = {
-  desk: '/about/Creative_studio_desk_202604011416.jpeg',
-  elenaVoss: '/about/Elena_Voss.jpeg',
-  jamesOkoro: '/about/James_Okoro.jpeg',
-  sofiaReyes: '/about/Sofia_Reyes.jpeg',
-  marcusWebb: '/about/Marcus_Webb.jpeg',
-  ninaPark: '/about/Nina_Park.jpeg',
-  weiLin: '/about/Wei_Lin.jpeg',
+  desk: `${base}about/Creative_studio_desk_202604011416.jpeg`,
+  elenaVoss: `${base}about/Elena_Voss.jpeg`,
+  jamesOkoro: `${base}about/James_Okoro.jpeg`,
+  sofiaReyes: `${base}about/Sofia_Reyes.jpeg`,
+  marcusWebb: `${base}about/Marcus_Webb.jpeg`,
+  ninaPark: `${base}about/Nina_Park.jpeg`,
+  weiLin: `${base}about/Wei_Lin.jpeg`,
 } as const
 
 export const aboutValues = [

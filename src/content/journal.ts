@@ -1,11 +1,13 @@
 import { site } from './site'
 
 /** Assets in /public/journal */
+const base = import.meta.env.BASE_URL
+
 const journalAssets = {
-  pauseNotPeak: '/journal/Brooklyn_open_plan_202604011440.jpeg',
-  systemsOverScreens: '/journal/Abstract_close-up_design_202604011440.jpeg',
-  motionPunctuation: '/journal/Mechanical_watch_or_202604011440.jpeg',
-  quietRebels: '/journal/Minimal_landscape_distant_202604011440.jpeg',
+  pauseNotPeak: `${base}journal/Brooklyn_open_plan_202604011440.jpeg`,
+  systemsOverScreens: `${base}journal/Abstract_close-up_design_202604011440.jpeg`,
+  motionPunctuation: `${base}journal/Mechanical_watch_or_202604011440.jpeg`,
+  quietRebels: `${base}journal/Minimal_landscape_distant_202604011440.jpeg`,
 } as const
 
 export const journalPosts = [

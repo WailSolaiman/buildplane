@@ -1,15 +1,17 @@
 import { site } from './site'
 
 /** Work grid + section stills in /public/home — swap filenames if you regenerate. */
+const base = import.meta.env.BASE_URL
+
 const homeAssets = {
-  lumenAtlas: '/home/Manhattan_arts_building_202604011158.jpeg',
-  northwindOs: '/home/Laptop_showing_logistics_202604011159.jpeg',
-  velvetLedger: '/home/Reception_in_contemporary_202604011159.jpeg',
-  studioNotes: '/home/Brooklyn_brownstones_at_202604011159.jpeg',
-  philosophy: '/home/Modern_design_studio_202604011159.jpeg',
+  lumenAtlas: `${base}home/Manhattan_arts_building_202604011158.jpeg`,
+  northwindOs: `${base}home/Laptop_showing_logistics_202604011159.jpeg`,
+  velvetLedger: `${base}home/Reception_in_contemporary_202604011159.jpeg`,
+  studioNotes: `${base}home/Brooklyn_brownstones_at_202604011159.jpeg`,
+  philosophy: `${base}home/Modern_design_studio_202604011159.jpeg`,
   /** Mira Chen quote — use `nycProductTeam` in `homeSectionImages` if you prefer the meeting-room shot. */
-  testimonial: '/home/Professional_woman_VP_202604011159.jpeg',
-  nycProductTeam: '/home/NYC_product_team_202604011159.jpeg',
+  testimonial: `${base}home/Professional_woman_VP_202604011159.jpeg`,
+  nycProductTeam: `${base}home/NYC_product_team_202604011159.jpeg`,
 } as const
 
 /** Exported for Philosophy + Testimonial sections (single place to change hero stills). */
