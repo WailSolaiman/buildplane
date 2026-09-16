@@ -9,7 +9,7 @@ export function JournalPage() {
   const [featured, ...rest] = journalPosts
 
   return (
-    <main className="min-h-svh pb-24 pt-28 md:pt-36">
+    <main className="min-h-svh pb-24 pt-24 md:pt-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <PageHeader
           eyebrow={journalPageHeader.eyebrow}

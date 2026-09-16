@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Light = Buildplane navy + light Mux video */
+/* Light = Buildplane navy + daylight hero image */
 [data-theme='light'] {
   --font-display: 'Instrument Serif', serif;
   --font-body: 'Inter', sans-serif;
@@ -22,7 +22,7 @@
   --nav-border-alpha: 8%;
 }
 
-/* Dark = deeper palette + dark Mux video */
+/* Dark = deeper palette + dusk hero image */
 [data-theme='dark'] {
   --font-display: 'Instrument Serif', serif;
   --font-body: 'Inter', sans-serif;

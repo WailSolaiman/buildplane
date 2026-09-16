@@ -4,10 +4,10 @@ import { site } from './site'
 const base = import.meta.env.BASE_URL
 
 const journalAssets = {
-  pauseNotPeak: `${base}journal/Brooklyn_open_plan_202604011440.jpeg`,
-  systemsOverScreens: `${base}journal/Abstract_close-up_design_202604011440.jpeg`,
-  motionPunctuation: `${base}journal/Mechanical_watch_or_202604011440.jpeg`,
-  quietRebels: `${base}journal/Minimal_landscape_distant_202604011440.jpeg`,
+  pauseNotPeak: `${base}journal/open-plan.webp`,
+  systemsOverScreens: `${base}journal/abstract-design.webp`,
+  motionPunctuation: `${base}journal/watch-detail.webp`,
+  quietRebels: `${base}journal/landscape.webp`,
 } as const
 
 export const journalPosts = [

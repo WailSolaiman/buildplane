@@ -4,13 +4,13 @@ import { site } from './site'
 const base = import.meta.env.BASE_URL
 
 export const aboutAssets = {
-  desk: `${base}about/Creative_studio_desk_202604011416.jpeg`,
-  elenaVoss: `${base}about/Elena_Voss.jpeg`,
-  jamesOkoro: `${base}about/James_Okoro.jpeg`,
-  sofiaReyes: `${base}about/Sofia_Reyes.jpeg`,
-  marcusWebb: `${base}about/Marcus_Webb.jpeg`,
-  ninaPark: `${base}about/Nina_Park.jpeg`,
-  weiLin: `${base}about/Wei_Lin.jpeg`,
+  desk: `${base}about/studio-desk.webp`,
+  elenaVoss: `${base}about/elena-voss.webp`,
+  jamesOkoro: `${base}about/james-okoro.webp`,
+  sofiaReyes: `${base}about/sofia-reyes.webp`,
+  marcusWebb: `${base}about/marcus-webb.webp`,
+  ninaPark: `${base}about/nina-park.webp`,
+  weiLin: `${base}about/wei-lin.webp`,
 } as const
 
 export const aboutValues = [

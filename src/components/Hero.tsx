@@ -1,24 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTheme } from '../theme/ThemeContext'
 
-/** `autoplay=muted` is required for background playback in most browsers. */
-const MUX_PLAYER_LIGHT =
-  'https://player.mux.com/ytumTMGEnhkpLWAWc8QtpRdnDZEWmZq5JYtM302Z5VOc?metadata-video-title=1774988239934&video-title=1774988239934&autoplay=muted&muted=true&loop=true'
+const base = import.meta.env.BASE_URL
 
-const MUX_PLAYER_DARK =
-  'https://player.mux.com/5ajVajxyVpFdB2TLCzuhE1PwDRAmZdfnqUC2tB01rMRs?metadata-video-title=1774988243278&video-title=1774988243278&autoplay=muted&muted=true&loop=true'
+/** Matched pair: the studio building, same frame, by day and at night. */
+const HERO_IMAGE_LIGHT = `${base}hero-day.webp`
+const HERO_IMAGE_DARK = `${base}hero-night.webp`
 
-/** 241:134 from Mux embed — used for object-fit–style cover math. */
-const MUX_ASPECT_W = 241
-const MUX_ASPECT_H = 134
+const IMAGE_CLASS = 'h-full w-full object-cover'
 
-const IFRAME_FRAME_CLASS =
-  'pointer-events-none absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 border-0'
-
-/** Clips iframe; inner pan shifts frame on small screens (reveal left side of shot). */
-const VIDEO_CLIP = 'absolute inset-0 overflow-hidden'
-const VIDEO_PAN =
-  'relative h-full w-full max-md:-translate-x-[min(30vw,7rem)] md:translate-x-0'
+/** Clips the image; inner pan shifts the crop on small screens. */
+const IMAGE_CLIP = 'absolute inset-0 overflow-hidden'
 
 const LAYER_TRANSITION = 'transition-[opacity] duration-500 ease-out'
 
@@ -65,11 +57,6 @@ export function Hero() {
     },
     [outgoing, outgoingOpaque],
   )
-
-  const iframeSize = {
-    width: `max(100vw, calc(100vh * ${MUX_ASPECT_W} / ${MUX_ASPECT_H}))`,
-    height: `max(100vh, calc(100vw * ${MUX_ASPECT_H} / ${MUX_ASPECT_W}))`,
-  } as const
 
   let darkZ: number
   let darkOp: number
@@ -126,18 +113,17 @@ export function Hero() {
           style={{ zIndex: darkZ, opacity: darkOp }}
           onTransitionEnd={outgoing === 'dark' ? onOutgoingTransitionEnd : undefined}
         >
-          <div className={VIDEO_CLIP}>
-            <div className={VIDEO_PAN}>
-              <iframe
-                title="Buildplane background — dark"
-                src={MUX_PLAYER_DARK}
-                onLoad={onDarkLoad}
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowFullScreen
-                className={IFRAME_FRAME_CLASS}
-                style={iframeSize}
-              />
-            </div>
+          <div className={IMAGE_CLIP}>
+            <img
+              src={HERO_IMAGE_DARK}
+              alt=""
+              onLoad={onDarkLoad}
+              onError={onDarkLoad}
+              decoding="async"
+              fetchPriority={stableTheme === 'dark' ? 'high' : 'low'}
+              className={IMAGE_CLASS}
+              style={{ objectPosition: '50% 50%' }}
+            />
           </div>
         </div>
 
@@ -146,29 +132,28 @@ export function Hero() {
           style={{ zIndex: lightZ, opacity: lightOp }}
           onTransitionEnd={outgoing === 'light' ? onOutgoingTransitionEnd : undefined}
         >
-          <div className={VIDEO_CLIP}>
-            <div className={VIDEO_PAN}>
-              <iframe
-                title="Buildplane background — light"
-                src={MUX_PLAYER_LIGHT}
-                onLoad={onLightLoad}
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowFullScreen
-                className={IFRAME_FRAME_CLASS}
-                style={iframeSize}
-              />
-            </div>
+          <div className={IMAGE_CLIP}>
+            <img
+              src={HERO_IMAGE_LIGHT}
+              alt=""
+              onLoad={onLightLoad}
+              onError={onLightLoad}
+              decoding="async"
+              fetchPriority={stableTheme === 'light' ? 'high' : 'low'}
+              className={IMAGE_CLASS}
+              style={{ objectPosition: '50% 50%' }}
+            />
           </div>
         </div>
       </div>
 
-      {/* Dark gradient scrim over video for text contrast (option 1) */}
+      {/* Dark gradient scrim over the image for text contrast */}
       <div
-        className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-b from-black/[0.06] via-black/[0.22] to-black/[0.52]"
+        className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-b from-black/25 via-black/40 to-black/60"
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-3xl flex-col items-center justify-center px-6 pb-16 pt-24 text-center sm:pt-28">
+      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-3xl flex-col items-center justify-center px-6 pb-16 pt-20 text-center sm:pt-24">
         <h1
           className="animate-fade-rise w-full max-w-md font-normal leading-[1.08] tracking-tight text-balance text-5xl text-white sm:max-w-lg sm:text-6xl md:max-w-xl md:text-7xl lg:max-w-2xl lg:text-7xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}

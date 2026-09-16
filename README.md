@@ -2,8 +2,6 @@
 
 Marketing site for **Buildplane** — a fictional Brooklyn studio portfolio built with React. It ships as a static SPA: product/brand studio narrative, work grid, about, journal, and a contact page with a static form.
 
-**Live site:** [buildplane.wailsolaiman.com](https://buildplane.wailsolaiman.com/)
-
 ## Stack
 
 - [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
@@ -32,9 +30,9 @@ Marketing site for **Buildplane** — a fictional Brooklyn studio portfolio buil
 
 Global site facts (name, email, address, team size) live in **`src/content/site.ts`**.
 
-## Hero video
+## Hero image
 
-The home hero uses **Mux** player embeds (URLs in `src/components/Hero.tsx`). Replace those URLs if you use different assets.
+The home hero uses a pair of stills that cross-fade with the theme: `public/hero-day.webp` for light, `public/hero-night.webp` for dark (paths in `src/components/Hero.tsx`). Swap those two files to use different assets.
 
 ## Requirements
 

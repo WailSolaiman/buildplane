@@ -4,12 +4,12 @@ import { site } from './site'
 const base = import.meta.env.BASE_URL
 
 const studioAssets = {
-  lumenAtlas: `${base}studio/Manhattan_gallery_lobby_202604011236.jpeg`,
-  northwindOs: `${base}studio/Northwind_OS_desk_202604011238.jpeg`,
-  velvetLedger: `${base}studio/Small_office_reception_202604011243.jpeg`,
-  studioNotes: `${base}studio/Desk_still_life_202604011247.jpeg`,
-  harborMeridian: `${base}studio/Desk_with_monitor_202604011247.jpeg`,
-  dumboWorks: `${base}studio/Loft_coworking_brick_202604011247.jpeg`,
+  lumenAtlas: `${base}studio/gallery-lobby.webp`,
+  northwindOs: `${base}studio/northwind-desk.webp`,
+  velvetLedger: `${base}studio/office-reception.webp`,
+  studioNotes: `${base}studio/desk-still-life.webp`,
+  harborMeridian: `${base}studio/desk-monitor.webp`,
+  dumboWorks: `${base}studio/loft-coworking.webp`,
 } as const
 
 export const studioProjects = [

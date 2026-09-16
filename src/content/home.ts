@@ -4,14 +4,14 @@ import { site } from './site'
 const base = import.meta.env.BASE_URL
 
 const homeAssets = {
-  lumenAtlas: `${base}home/Manhattan_arts_building_202604011158.jpeg`,
-  northwindOs: `${base}home/Laptop_showing_logistics_202604011159.jpeg`,
-  velvetLedger: `${base}home/Reception_in_contemporary_202604011159.jpeg`,
-  studioNotes: `${base}home/Brooklyn_brownstones_at_202604011159.jpeg`,
-  philosophy: `${base}home/Modern_design_studio_202604011159.jpeg`,
+  lumenAtlas: `${base}home/arts-building.webp`,
+  northwindOs: `${base}home/logistics-laptop.webp`,
+  velvetLedger: `${base}home/reception.webp`,
+  studioNotes: `${base}home/brownstones.webp`,
+  philosophy: `${base}home/design-studio.webp`,
   /** Mira Chen quote — use `nycProductTeam` in `homeSectionImages` if you prefer the meeting-room shot. */
-  testimonial: `${base}home/Professional_woman_VP_202604011159.jpeg`,
-  nycProductTeam: `${base}home/NYC_product_team_202604011159.jpeg`,
+  testimonial: `${base}home/vp-portrait.webp`,
+  nycProductTeam: `${base}home/product-team.webp`,
 } as const
 
 /** Exported for Philosophy + Testimonial sections (single place to change hero stills). */
